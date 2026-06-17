@@ -242,3 +242,59 @@ Kuyruklar da, routing key'e göre bu exchangele abone olabilir ve sadece ilgili 
 					  +-------------+               		  	 +-------------+             	  	    +-------------+
 					  |  Consumer   |               		  	 |  Consumer   |             	  	    |  Consumer   |
 					  +-------------+               		  	 +-------------+             	  	    +-------------+
+					  
+					  
+					  
+
+////////*******Gelişmiş Kuyruk Mimarisi Nedir?**********\\\\\\\\\\
+
+RabbitMQ teknolojisinin ana fikri, yoğun kaynak gerektiren işleri/görevleri/operasyonları hemen yapmaya koyularak tamamlanmasını beklemek zorunda kalmaksızın, bu işleri ölçeklendirilebilir bir vaziyette daha sonra yapılacak şekilde planlamaktır...
+Tabi bu planlamayı gerçekleştirirken kuyruklardan istifade edilmekte ve görevleri temsil edecek olan mesajlar bu kuyruklara atılmakta ve tüketiciler tarafından bu mesajlar elde edilerek görevlerin asenkron bir şekilde işlenmesi sağlanmaktadır.
+Tüm bu süreçte kuyrukların bakımı, yağlanması gerekmekte :) senaryosuna göre mesajların kalıcılığına dair durumlar vs. konfigüre edilmesi gerekmektedir. Ayrıca birden fazla tüketicinin söz konusu olduğu durumlarda nasıl bir davranışın olacağı vs. durumları da oldukça önem arz etmektedir.
+Gelişmiş Kuyruk Mimarisinden kastettiğimiz işte tam da bu noktada devreye girmektedir! Kuyrukların ve mesajların kalıcılığı, mesajların birden fazla tüketiciye karşı dağıtım stratejisi yahut tüketici tarafından işlenmiş bir mesajın kuyruktan silinebilmesi için onay/bildiri sistemi vs. tüm bu detaylar bu başlık altında değerlendirilecektir.
+
+//////******Round-Robin Dispatching****\\\
+
+RabbitMQ, default olarak tüm consumer'lara sırasıyla mesaj gönderir.
+
+////****Mesaj Onaylama Message Acknowledgement ****\\\\
+
+	RabbitMQ, tüketiciye gönderdiği mesajı başarılı bir şekilde işlensin veya işlenmesin hemen kuyruktan silinmesi üzere işaretler.
+	Tüketicilerin kuyruktan aldıkları mesajları işlemeleri sürecinde herhangi bir kesinti yahut problem durumu meydana gelirse ilgili mesaj tam olarak işlenemeyeceği için esasında görev tamamlanmamış olacaktır.
+	BU tarz durumlara istinaden mesaj başarıyla işlendiyse eğer kuyruktan silinmesi için tüketiciden RabbitMQ'nun uyarılması gerekmektedir.
+	Consumer'dan, mesaj işlemenin başarıyla sonuçlandığına dair dönüt alan RabbitMQ mesajı silecektir.
+	
+	////*** Message Acknowledgement Problemleri Nelerdir?
+		Bir message işlenmeden consumer problem yaşarsa bu mesajın sağlıklı bir şekilde işlenebilmesi için başka bir consumer tarafından tüketilebilir olmalıdır.
+		Aksi taktirde mesaj kuyruktan tüketici tarafından alındığı an silinirse bu durumda veri kaybı ihtimali söz konusu olacaktır. İşte bu tarz durumlar için Message Acknowledgement özelliği şarttır diyebiliriz.
+		Eğer ki Message Acknowledgement özelliğini kullanıyorsanız kesinlikle mesaj işleme başanyla sonlandığı taktirde RabbitMQ'ya mesajın silinmesi için haber göndermeyi unutmayınız. Aksi taktirde mesaj tekrar yayınlanacak ve başka bir tüketici tarafından tekrar işlenecektir. BU durumda da bir mesajın birden fazla kez işlenmesi dUrı.jmU söz konusu olabilir.
+		Tabi ayriyeten mesajlar onaylanarak silinmediği taktirde kuyrukta kalınmasına neden olacak ve bu durum kuyrukların büyümesi ve yavaşlamasıyla sonuçlanıp performans düşüklüğüne neden olacaktır.
+		
+	/////*** Message AcknowIedgement'a Daır Son İşaretler
+		Anlayacağınız, bu özellik sayesinde bir mesajın kaybolmadığından emin olabilmekteyiz.
+		Tüketici açısından mesajın alındığını, işlendiğini ve artık kuyruktan silinebilir olduğunu ifade ederek süreci daha güvenilir hale getirmekteyiz.
+		Tabi her tüketicinin işlem yoğunluğuna göre RabbitMQ'ya karşılık onay bildirim süresi değişkenlik gösterecektir.
+		RabbitMQ açısından tüketiciden gelecek olan onay bildirimi için bir zaman aşmı süresi söz konusudur. BU varsayılan olarak 30 dk.dır.
+		Evet, Ra bitMQ tüketicinin işlem neticesini 30 dk boyunca bekler. BU sürenin nasıl değiştirilebileceğini dersimizin devamında pratik olarak ele alıyor olacağız.
+		Eğer bu süre dolarda tüketiciden herhangi bir onay bildirimi gelmezse RabbitMQ mesajı tekrar yayınlamaya devam edecektir.
+		
+	////****Message Acknowledgement Nasıl Yapılandırılır? BasicAck
+		RabbitMQ'da mesaj onaylama sürecini aktifleştirebilmek için consumer uygulamasında 'BasicConsume' metodundaki 'autoAck' parametresini görseldeki gibi false değerine getirebilirsiniz.
+		Böylece RabbitMQ'da varsayılan olarak mesajların kuyruktan silinme davranışı değiştirilecek ve consumer'dan onay beklenecektir.
+		Consumer, mesajı başarıyla işlediğine dair uyanyı 'channel.BasicAck' metodu ile gerçekleştirir.
+		multiple parametresi; birden fazla mesaja dair onay bildirisi gönderir. Eğer true değeri verilirse, DeliveryTag değerine sahip olan bu mesajla birlikte bundan önceki mesajlarında işlendiğini onaylar. Aksi taktirde false verilirse sadece bu mesaj için onay bildirisinde bulunacaktır.
+	
+	////*** BasicNack ile İşlenmeyen Mösqları Geri GÖnderrne
+		Bazen, consumer'lar da istemsiz durumların dışında kendi kontrollerimiz neticesinde mesajları işlememek isteyebilir veyahut ilgili mesajın işlenmesini başarıyla sonuçlandıramayacağımızı anlayabiliriz.
+		Böyle durumlarda 'channel.BasicNack' metodunu kullanarak RabbitMQ'ya bilgi verebilir ve mesajı tekrardan işletebiliriz.
+		Tabi burdda requeue parametresi oldukça önem arz etmektedir. BU parametre, bu consumer tarafından işlenemeyeceği ifade edilen bu mesajın tekrardan kuyruğa eklenip eklenmemesinin kararını vermektedir.
+	
+	////**** BasicCancel ile Bir Kuyruktaki Tüm Mesajların İşlennnesİnİ Reddetme
+		BasicCancel metodu ile verilen consumerTag değerine kqrşılık gelen queue'daki tüm mesöjlar reddedilerek, işlenmez!
+		
+	////*** BasicReject İle Tek Bir Mesajın İşlenmesini Reddetme
+	
+		RabbitMQ'da kuyrukta bulunan mesajlardan belirli olanların consumer tarafından işlenmesini istemediğimiz durumlarda BasicReject metodunu kullanabiliriz.
+		
+
+//////***** Message Durability Mesaj Dayanıklılığı/SürekliIiği********\\\\\\

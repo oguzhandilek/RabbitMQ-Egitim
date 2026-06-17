@@ -36,7 +36,14 @@ await channel.QueueDeclareAsync("example-queue", durable: true, exclusive: false
 //Queue'ya Mesaj Gönderme
 //Queue'ya mesaj göndermek için mesajın byte[] formatında olması gerekmektedir. Bu nedenle mesajı UTF-8 formatında byte dizisine dönüştürmek için Encoding.UTF8.GetBytes() metodunu kullanabilirsiniz.
 
-byte[] message= Encoding.UTF8.GetBytes("Hello, RabbitMQ!"); // Gönderilecek mesajı byte[] formatına dönüştürür.
-await channel.BasicPublishAsync(exchange:"", routingKey:"example-queue", body:message); // Mesajı kuyruğa gönderir.
+//byte[] message= Encoding.UTF8.GetBytes("Hello, RabbitMQ!"); // Gönderilecek mesajı byte[] formatına dönüştürür.
+//await channel.BasicPublishAsync(exchange:"", routingKey:"example-queue", body:message); // Mesajı kuyruğa gönderir.
+
+for (int i = 0; i < 20; i++)
+{
+   await Task.Delay(1000);
+    byte[] message = Encoding.UTF8.GetBytes("Hello, RabbitMQ");
+    await channel.BasicPublishAsync(exchange: "", routingKey: "example-queue", body: message);
+}
 
 Console.ReadLine();
