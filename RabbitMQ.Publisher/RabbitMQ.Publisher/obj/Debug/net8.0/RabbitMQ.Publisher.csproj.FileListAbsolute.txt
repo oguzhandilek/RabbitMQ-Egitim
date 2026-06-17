@@ -17,3 +17,4 @@ D:\personal-repostories\RabbitMQ-Egitim-Serisi\RabbitMQ.Publisher\RabbitMQ.Publi
 D:\personal-repostories\RabbitMQ-Egitim-Serisi\RabbitMQ.Publisher\RabbitMQ.Publisher\obj\Debug\net8.0\RabbitMQ.Publisher.pdb
 D:\personal-repostories\RabbitMQ-Egitim-Serisi\RabbitMQ.Publisher\RabbitMQ.Publisher\obj\Debug\net8.0\RabbitMQ.Publisher.genruntimeconfig.cache
 D:\personal-repostories\RabbitMQ-Egitim-Serisi\RabbitMQ.Publisher\RabbitMQ.Publisher\obj\Debug\net8.0\ref\RabbitMQ.Publisher.dll
+D:\personal-repostories\RabbitMQ-Egitim-Serisi\RabbitMQ.Publisher\RabbitMQ.Publisher\obj\Debug\net8.0\RabbitMQ.Publisher.sourcelink.json
