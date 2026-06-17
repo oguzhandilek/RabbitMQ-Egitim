@@ -1,0 +1,244 @@
+///////////*************RABBITMQ**********\\\\\\\\\\\\\\\
+
+/////******Message Queue Nedir?****\\\\\
+
+	Message Queue, yazılım sistemlerinde iletişim için kullanılan bir yapıdır.
+	Birbirinden bağımsız sistemler arasında veri alışverişi yapmak için kullanılır.
+	Message Queue, gönderilen mesajları kuyrukta saklar ve sonradan bu mesajların işlenmesini sağlar.
+	Kuyruğa mesaj gönderene Producer(Yayıncı) ya da Publisher, kuyruktaki mesajları işleyene ise Consumer(Tüketici) denir.
+	Burada 'message'dan kastedilen iki sistem arasında iletişim için kullanılan veri birimidir. Yani Producer'in Consumer tarafından işlemesini istediği verinin ta kendisidir.
+	Misal, bir e-ticaret sisteminden ömek verirsek eğer siparişe dair mesaj olarak; sipariş numarası, müşteri bilgileri, ürün bilgisi veya ödeme bilgileri örnek verilebilir.
+	ynca, message queue içerisindeki mesajlonn consumer tarafından sırasıyla işlendiğine dikkatinizi çekerim!
+	Consumer mesajları işler ya da bir başka deyişle tüketir.
+
+
+/////******Message Queue'nun Amacı Nedir?****\\\\\
+
+	Bazı senaryolarda birbirlerinden farklı sistemler arasında işlevsel açıdan senkron haberleşmek kullanıcı deneyimi açısından pek uygun olmayabilmektedir.
+	Buna omek vermemiz gerekirse eğer; bir e-ticaret uygulamasında ödeme işlemi neticesinde fatura oluşturabilmek için ilgili servisin işlemini senkron bir şekilde beklemek ve bunu son kullanıcıya yansıtmak hiçte mantıklı bir davranış olmayacaktır.
+	BU tarz senaryolarda sistemler arasında senkrondan ziyade asenkron bir iletişim modeli benimsenmelidir.
+	Ödeme neticesinde kullanıcıya siparişin başarıyla gerçekleştiğine dair sonuç dönülürken bir yandan da message queue'ya fatura ile ilgili bir mesaj gönderilmelidir.
+	Bu mesaj, fatura servisi tarafından ilk fırsatta alınarak işlenir/tüketilir ve son kullanıcı fatura oluşturma sürecini beklemeksizin ilgili siparişe dair fatura asenkron bir şekilde üretilir.
+	Böylece süreçte sistemler arasındaki iletişim daha verimli hale gelmiş olur ve işlemler arasında bir bekleme yahut gecikme durumu söz konusu olmaz!
+	
+	
+////////*****Senkron & Asenkron İletişim Modelleri*******\\\\
+
+	Senkron iletişim modelinde istek neticesinde sonuç beklenir.
+	
+	Asenkron iletişim modelinde istek neticesinde sonuç beklenmez.
+	
+	Mail göndermek, fatura oluşturmak, stok güncellemek vs. gibi zaman gerektiren işlemlerin asenkron iletişim modeliyle işlenmesi daha idealdir.
+	
+/////*****Message Broker Nedir?*****\\\\\\
+
+	İçerisinde Message Queue'yi barındıran ve bu queue üzerinden publisher/producer ile consumer arasındaki iletişimi sağlayan sistemdir.
+	Bir Message Broker içerisinde birden fazla queue bulunabilir.
+
+/////*****Message Broker Teknolojileri Nedir?*****\\\\\\
+
+RabbitMQ
+Kafka
+ActiveMQ
+ZeroMQ
+NSQ
+IronMQ
+Redis
+vs.
+
+//////*****RabbitMQ Nedir ? *****\\\\\
+
+	Open source olan bir message queuing sistemidir.
+	Erland diliyle geliştirilmiştir.
+	Cross platform desteklemesinden dolayı farklı işletim sistemlerinde kurulabilir ve kullanılabilir.
+	Zegin bir dokümantasyona sahiptir.
+	Cloudda hizmeti mevcuttur.
+
+//////*****RabbitMQ'yu Neden Kullanmalıyız ? *****\\\\\\
+
+	Yazılım uygulamalarında ölçeklendirilebilir bir ortam sağlayabilmek istiyorsak eğer RabbitMQ kullanılabilir.
+	Uygulamalarımızda kullanıcılardan gelen isteklerin neticelerine anlık cevap veremiyorsak ya da anlık olmayan/zaman alan işlemleri devreye sokmamız gerekiyorsa kullanıcıyı oyalamak yerine bu tarz süreçleri asenkron bir şekilde işleyip uygulama yoğunluğunu düşürmemiz gerekmektedir.
+	Aksi taktirde kullanıcı gereksiz bir response time süresine maruz kalacak ve yazılımımız aleyhine bir durum söz konusu olacaktır.
+	işte bu tarz durumlarda asenkron süreci kontrol edecek olan yapı RabbitMQ'dur.
+	RabbitMQ, response time'ı UZUn sürebilecek operasyonları uygulamadan bağımsızlaştırarak buradaki sorumluluğu farklı bir uygulamanın üstlenmesini sağlayacak olan bir mekanizma sunmaktadır.
+	BU mekanizma uzun sürebilecek maliyetli işlemleri RabbitMQ aracılığıyla kuyruğa gönderecektir ve bu kuyruktaki işlemler farklı bir uygulama tarafından işlenerek sonuç asenkron bir şekilde ana uygulamadan bağımsız elde edilecek, böylece ana uygulamadaki yoğunluk mümkün mertebe minimize edilmiş olacaktır.
+	BU duruma somut bir örnek vermemiz gerekirse eğer; bir web sitesi üzerinden herhangi bir word dosyasını PDF formatına dönüştürme hizmetini sağlayacaksanız eğer buradaki işlem yoğunluğunu web uygulamasına yaptırmaktan kaçınmanız gerekmektedir. Yapılması gereken RabbitMQ aracılığıyla oluşturulan bir kuyruğa tüm değerlerin sokulması ve süreçte ilgili kuyruğu dinleyen farklı bir uygulama aracılığıyla convert operasyonunun gerçekleştirilmesi gerekmektedir. Haliyle ana uygulamayı gereksiz bir response time'a maruz bırakmadan gerekli dönüşüm operasyonu başarıyla sonlandırılmış olacaktır.
+	
+	
+
+
+
+/////////////////********RabbitMQ'nun İşleyeşi Nasıldır? ******\\\\\\\
+
+					|----------------Message Broker -----------|
+					| Advenced Message Queuing Protocol (AMQP) |
+					|										   |
+	Publisher ---Publish---> Exchange------Routes----> Queue -----Consumes----> Consumer
+					|										   |
+					|										   |
+					|------------------------------------------|
+					
+	
+	
+	RabbitMQ, bir message broker olduğu için mesajlan yayınlayan publisher/producer ve bu mesajları tüketen consumer servisleri tarafından ortak olarak kullanılmaktadır.
+	Yapısal olarak Exchange ve Queue ensturmanları üzerinden işlevsellik göstermektedir.
+	Publisher mesajı publish ettikten sonra ilgili mesajı Exchange karşılayacak, Exchange ise belirtilen route ile mesajı ilgili kuyruğa yönlendirecektir. (Mesajın hangi queue'ya gideceği exchange içerisindeki route'dan öğrenilir)
+	Burada publisher ile consumerlın hangi platformda hangi dil ile geliştirildiğinin hiçbir önemi yoktur! BU mimari bütünsel olarak yazılım dilinden bağımsız bir işlevsellik sergilemektedir.
+	Tüm bu süreçte RabbitMQ AMQP(Advanced Message Queuing Protocol) protokolünü kullanarak faaliyetlerini gerçekleştirmektedir.
+	
+
+
+/////****RabbitMQ'unun Dockerize Edilmesi****\\\\\\\\\\
+
+	# latest RabbitMQ 4.x
+	docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4-management
+	
+	kulanıcıadı:guest
+	parola: guest
+
+
+////////***** RabbitMQ'nun CloudAMQP Üzerinden İncelenmesi***\\\\\\\\\
+
+	https://www.cloudamqp.com/
+	
+	Instance Oluşturma Adımları:
+	Create New ınstance butonuna tıklanır.
+	Plan adı örnek 'Example' girilebilir.
+	Plan için Listtle Lemur (Free) seçilip Slection Region butaonuna tıklanır.
+	Data Center Amazon Seçilebiir. ve Region ise US-East-1 (Northern Virginia) seçilebilr.
+	
+	Bu şekilde ilgili bilgiler girildikten sonra Instances listemizden eklediğimiz instance seçip RabbitMQ Manager'a bağlanabilirsiniz.
+	
+	
+	
+/////////*******Exchange & Binding KAVRAMLARI ******\\\\\\\\
+
+Exchange: Publisher tarafından gönderilen mesajların nasıl yönetileceğini ve hangi route'lara yönlendirileceğini belirlememiz konusunda kontrol sağlayan/karar veren yapıdır. 
+Route: Route ise mesajlann exchange üzerinden kuyruklara nasıl önderileceğjni tanımlayan mekanizmadır. 
+	BU süreçte exchange'de bulunan routing key değeri kullanılır.
+	Routing key ile mesajlann hangi kuyruklara gönderileceği konusunda exchange'de bilgi tutulur.
+	Route ise genel olarak mesajların yolunu ifade eder.
+
+
+//////****** Binding Nedir ? **********\\\\\\
+
+	Exchange ve Queue arasındaki ilişkiyi ifade eden yapıdır. Exchange ile kuyruk arasında bağlantı oluşturmanın terminolojik adıdır.
+	Exchange birden fazla queue'ya bind olabiliyorsa ğer o halde mesajı hangi kuyruğa göndereceğini nereden anlıyorP—
+		Exchange'in bind edildiği kuyruklardan hangisine mesaj göndereceğini anlaması exchange türüne göre değişiklik gösteriyor!
+		Misal olarak; Topıc ve Direct exchange türleri routing key ile ayırt ederken, Fanout ve Headers yöntemleri daha farklı yöntemler uyguluyor.
+		
+		
+		
+ ///*** Exchange Types****\\\\
+	
+	///**** Direct Exchange****\\\\
+	
+		Mesajların direkt olarak belirli bir kuyruğa gönderilmesini sağlayan exchange'dir.
+		
+		
++-----------+        routing key: "green"        +-------------------+
+| Producer  | ---------------------------------> |  Direct Exchange  |
++-----------+                                    +-------------------+
+                                                        |
+                        +-------------------------------+-------------------------------+
+                        |                               |                               |
+                        v                               v                               v
+
+                +---------------+               +---------------+               +---------------+
+                | Queue: green  |               | Queue: red    |               | Queue: orange |
+                +---------------+               +---------------+               +---------------+
+                        |                               |                               |
+                        v                               v                               v
+                 +-------------+                 +-------------+                 +-------------+
+                 |  Consumer   |                 |  Consumer   |                 |  Consumer   |
+                 +-------------+                 +-------------+                 +-------------+
+
+
+Mesaj "green" routing key ile geldiği için:
+→ Sadece "green" queue mesajı alır.
+→ "red" ve "orange" queue mesajı almaz.
+
+
+Mesaj, routing key'e uygun olan hedef kuyruklara gönderilir. Bunun için mesaj gönderilecek kuyruğun adını routing key olarak belirtmek yeterlidir.
+
+Genellikle hata mesajlarının işlendiği senaryolarda kullanılabilir. Şöyle ki; bir sistemde 'dosya yükleme hatası', iveritabanı bağlantı hatası' vs. gibi farklı türde/çeşitte hata mesajları olabilir. BU hata mesajlarının izlenmesi ve gerektiği taktirde çözülmesi gerekebilir. Haliyle her bir hata türü için hUSUSİ ayn bir kuyruk oluşturulabilir ve hata mesajları direkt olarak ilgili kuyruğa gönderilerek işlenebilir. Böylece hata mesajlannın izlenmesi ve çözülmesi için sadece kuyrukların takip edilmesi yeterli olacaktır.
+
+Başka bir örnek vermemiz gerekirse eğer; e-ticaret sistemlerindeki sipariş süreçlerini düşünebiliriz. Biliyorsunuz ki, bir sipariş 'Onaylandı', 'iptal Edildi' veyahut 'İade Edildi' şeklinde Üç farklı durumda gerçekleşmektedir. Bir sipariş sürecinde farklı durumlara nazaran davranışlar geliştirmek ve yönetim sergileyebilmek için her bir durum için ayn kuyruklar oluşturulabilir ve siparişler direkt olarak ilgili kuyruklara gönderilerek işlenebilir. BU şekilde de her durum için ayrı aksiyon alabilmek ve siparişleri işlemek daha kolay hale gelecektir.
+
+
+	////*****Fanout Exchange****\\\
+	
+	Mesajlann, bu exchange'e bind olmuş olan tüm kuyruklara gönderilmesini sağlar. Publisher mesajların gönderildiği kuyruk isimlerini dikkate almaz ve mesajlan tüm kuyruklara gönderir.
+	
++-----------+              						 +-------------------+
+| Producer  | ---------------------------------> |  Fanout Exchange  |
++-----------+                                    +-------------------+
+                                                        |
+                        +-------------------------------+-------------------------------+
+                        |                               |                               |
+                        v                               v                               v
+													Queues
+                +---------------+               +---------------+               +---------------+
+                |  				|               |  				|               |  				|
+                +---------------+               +---------------+               +---------------+
+                        |                               |                               |
+                        v                               v                               v
+                 +-------------+                 +-------------+                 +-------------+
+                 |  Consumer   |                 |  Consumer   |                 |  Consumer   |
+                 +-------------+                 +-------------+                 +-------------+
+	
+
+Misal olarak; bir microservice yaklaşımı benimsenmiş olan mimaride tüm servislere ortak bildirilerde bulunabilmek için Fanout Exchange kullanılabilir. Böylece veri paylaşımı merkezi bir şekilde hızlı ve etkili hale getirilebilir.
+
+
+
+	////**** Topic Exchange ********\\\\\\
+
+Routing key'leri kullanarak mesajları kuyruklara yönlendirmek için kullanılan bir exchange'dir. BU exchange ile routing keyfin bir kısmına/formatına/yapısına/yapısındaki keylere göre kuyruklara mesaj gönderilir.
+Kuyruklar da, routing key'e göre bu exchangele abone olabilir ve sadece ilgili routing key'e göre gönderilen mesajları alabilirler.
+
+
++-----------+  routing key: "first.green.faast"  +-------------------+
+| Producer  | ---------------------------------> |  Topic Exchange   |
++-----------+                                    +-------------------+
+                                                        |
+                        +-------------------------------+-------------------------------------------+
+                        |                               |                              				|
+                        v                               v                              				v
+
+                +-------------------+               +---------------------+               +-------------------+
+                | Queue: "*.green.*"|               | Queue: "*.red.fast" |               | Queue: "*.*.fast" |
+                +-------------------+               +---------------------+               +-------------------+
+                        |                      		           |                    	           |
+                        v                      		           v                    	           v
+                 +-------------+               		    +-------------+             	    +-------------+
+                 |  Consumer   |               		    |  Consumer   |             	    |  Consumer   |
+                 +-------------+               		    +-------------+             	    +-------------+
+				 
+
+Örnek olarak log sistemi senaryoları bu exchange için biçilmiş kaftan olacaktır. Kuyruklar, log seviyelerine göre abone olabilir ve sadece routing keyfine Uygı-ın ilgili log seviyesine ait mesajları alabilirler. Böylece sistem yöneticileri ya da ilgili servisler; belirli bir kategoriye veya key'e göre loglan filtreleyebilir ve böylece istedikleri hata yahut uyarı mesajlarına odaklanabilir, izleyebilir ve istedikleri log mesajlarını gözardı edebilirler.
+
+
+	///**** Header Exchange****\\\\\
+	
+	
+	Routing key yerine header'ları kullanarak mesajlan kuyruklara yönlendirmek için kullanılan exchange'dir.
+
++-----------+  Headers: {"key1","value1"}		 +---------------------+
+| Producer  | ---------------------------------> |  Headers Exchange   |
++-----------+                                    +---------------------+
+															|
+							+-------------------------------+--------+---------------------------------------+
+							|                              			 |                              		 |
+							v                              			 v                              		 v
+
+                +--------------------------+              +--------------------------+            +--------------------------+
+                | Queue: {"x-match", "any",|              | Queue: {"x-match", "any",|            | Queue: {"x-match", "all",|
+				|		"key1","value1",   |              |		"key3","value3",     |            |		"key1","value1",     |
+				|		"key2","value2"}   |              |							 |            |		"key2","value2"}     |
+                +--------------------------+              +--------------------------+            +--------------------------+
+							|                      		          		|                    	         	  |
+							v                      		           		v                    	          	  v
+					  +-------------+               		  	 +-------------+             	  	    +-------------+
+					  |  Consumer   |               		  	 |  Consumer   |             	  	    |  Consumer   |
+					  +-------------+               		  	 +-------------+             	  	    +-------------+
