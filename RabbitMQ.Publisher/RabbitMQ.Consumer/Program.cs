@@ -13,9 +13,18 @@ using System.Text;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
+//Local de dockerize edilmiş RabbitMQ sunucusuna bağlanmak için aşağıdaki bağlantı ayarlarını kullanabilirsiniz.
+ConnectionFactory factory = new()
+{
+    HostName = "localhost",
+    Port = 5672,
+    UserName = "guest",
+    Password = "guest"
+};
+
 //bağlantı oluşturma
-ConnectionFactory factory = new();
-factory.Uri = new("amqps://qtrldzyx:T-m3f2ulJj4YKH2N7PHvadw7nS-addVP@moose.rmq.cloudamqp.com/qtrldzyx");
+//ConnectionFactory factory = new();
+//factory.Uri = new("amqps://qtrldzyx:T-m3f2ulJj4YKH2N7PHvadw7nS-addVP@moose.rmq.cloudamqp.com/qtrldzyx");
 
 //bağlantı aktifleştirme ve kanal açma
 

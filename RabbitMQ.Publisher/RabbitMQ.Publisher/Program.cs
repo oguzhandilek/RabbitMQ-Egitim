@@ -15,9 +15,17 @@
 using RabbitMQ.Client;
 using System.Text;
 
+//Local de dockerize edilmiş RabbitMQ sunucusuna bağlanmak için aşağıdaki bağlantı ayarlarını kullanabilirsiniz.
+ConnectionFactory factory = new()
+{
+    HostName = "localhost",
+    Port = 5672,
+    UserName = "guest",
+    Password = "guest"
+};
 
-ConnectionFactory factory = new();
-factory.Uri = new Uri("amqps://qtrldzyx:T-m3f2ulJj4YKH2N7PHvadw7nS-addVP@moose.rmq.cloudamqp.com/qtrldzyx"); // RabbitMQ sunucusunun URI'sini buraya giriniz.
+//ConnectionFactory factory = new();
+//factory.Uri = new Uri("amqps://qtrldzyx:T-m3f2ulJj4YKH2N7PHvadw7nS-addVP@moose.rmq.cloudamqp.com/qtrldzyx"); // RabbitMQ sunucusunun URI'sini buraya giriniz.
 
 //bağlantıyı aktifleştiriniz ve ardından bu bağlantı üzerinden işlemleri yürütebilmek için bir kanal açınız.
 using IConnection connection = await factory.CreateConnectionAsync();
@@ -39,10 +47,10 @@ await channel.QueueDeclareAsync("example-queue", durable: true, exclusive: false
 //byte[] message= Encoding.UTF8.GetBytes("Hello, RabbitMQ!"); // Gönderilecek mesajı byte[] formatına dönüştürür.
 //await channel.BasicPublishAsync(exchange:"", routingKey:"example-queue", body:message); // Mesajı kuyruğa gönderir.
 
-for (int i = 0; i < 20; i++)
+for (int i = 0; i < 1000; i++)
 {
    await Task.Delay(1000);
-    byte[] message = Encoding.UTF8.GetBytes("Hello, RabbitMQ");
+    byte[] message = Encoding.UTF8.GetBytes($"Hello, RabbitMQ {i}");
     await channel.BasicPublishAsync(exchange: "", routingKey: "example-queue", body: message);
 }
 

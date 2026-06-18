@@ -136,23 +136,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\3249703\\.nuget\\packages\\": {},
+    "C:\\DevApplications\\Microsoft Visual Studio\\2022\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\RabbitMQ-Egitim\\RabbitMQ.Publisher\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj",
+      "projectUniqueName": "D:\\personal-repostories\\RabbitMQ-Egitim-Serisi\\RabbitMQ.Publisher\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj",
       "projectName": "RabbitMQ.Consumer",
-      "projectPath": "D:\\RabbitMQ-Egitim\\RabbitMQ.Publisher\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj",
-      "packagesPath": "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\",
-      "outputPath": "D:\\RabbitMQ-Egitim\\RabbitMQ.Publisher\\RabbitMQ.Consumer\\obj\\",
+      "projectPath": "D:\\personal-repostories\\RabbitMQ-Egitim-Serisi\\RabbitMQ.Publisher\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj",
+      "packagesPath": "C:\\Users\\3249703\\.nuget\\packages\\",
+      "outputPath": "D:\\personal-repostories\\RabbitMQ-Egitim-Serisi\\RabbitMQ.Publisher\\RabbitMQ.Consumer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\DevApplications\\Microsoft Visual Studio\\2022\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\OĞUZHAN DİLEK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\3249703\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -161,7 +163,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -207,7 +208,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.311/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
