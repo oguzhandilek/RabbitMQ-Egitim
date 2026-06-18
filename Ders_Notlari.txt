@@ -298,3 +298,30 @@ RabbitMQ, default olarak tüm consumer'lara sırasıyla mesaj gönderir.
 		
 
 //////***** Message Durability Mesaj Dayanıklılığı/SürekliIiği********\\\\\\
+
+	Consumerlların sıkıntı yaşama durumunda mesajların kaybolmayacağının garantisinin nasıl sağlanacağını öğrenmiş olduk.
+	Ancak RabbitMQ sunucusunun bir zevale uğraması durumunda ne olacağını da konuşmamız gerekmektedir.
+	Evet, RabbitMQ sunucusunda bir problem meydana geldiğinde yahut kapandığında ne olacak sizce?
+	RabbitMQ'da normal şartlarda bir kapanma durumu söz konusu olursa tüm kuyruklar ve mesajlar silinecektir!
+	Böyle bir durumda mesajların kaybolmaması, yani kalıcı olabilmesi için ekstradan çalışma gerçekleştirmemiz gerekmektedir.
+	BU çalışma; kuyruk ve mesaj açısından kalıcı olarak işaretleme yapmamızı gerektirmektedir.
+	Unutma!! İletileri bu şekilde kalıcı larak işaretlemek iletinin kaybolmayacağını tam olarak garanti ETMEZ!(AuthBox İnBox Desing paternler kullanılabilir.)
+	
+//////****Fair Dispatch*****\\\\
+
+	RabbitMQ'da tüm consumer'lara eşit şekilde mesajları iletebilirsiniz.
+	Consumer'lara eşit şekilde mesajların iletilmesi sistemdeki performansı düzenli bir hale getirecektir.
+	BU da uyrukta bulunan mesajların, mümkün olan en adil şekilde dağıtımını sağlamak için kullanılan bir özelliktir.
+	Böyle e bir consumer'ın diğer consumer'lardan daha fazla yük alması ve sistemdeki diğer consumer'ların kısmi aç kalması engellenmiş olur.
+	
+/			//////////***********Mesaj işleme Konfigürasyonu****\\\\\\\
+					
+					RabbitMQ'da BasicQos metodu ile mesajların işleme hızını ve teslimat sırasını belirleyebiliriz. Böylece Fair Dispatch özelliği konfigüre edilebilmektedir.
+					
+					
+----------------------------------------------------------------------------------
+
+///////////************** Direct Exchange*************\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	Mesajların direkt olarak belirli bir kuyruğa gönderilmesini sağlayan exchange'dir.
+	
