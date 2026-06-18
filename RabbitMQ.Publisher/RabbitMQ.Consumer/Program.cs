@@ -39,6 +39,11 @@ await channel.QueueDeclareAsync("example-queue", durable: true, exclusive: false
 
 AsyncEventingBasicConsumer consumer = new(channel);
 await channel.BasicConsumeAsync(queue:"example-queue",autoAck:false,consumer:consumer);
+await channel.BasicQosAsync(prefetchSize:0, prefetchCount:1, global:false); //Bu ayar, tüketicinin aynı anda kaç mesajı işleyebileceğini belirler.
+                                                                      //prefetchSize:0, mesaj boyutu sınırlaması olmadığını belirtir. Bu, tüketicinin herhangi bir boyuttaki mesajı alabileceği anlamına gelir.
+                                                                      //prefetchCount:1, tüketicinin aynı anda yalnızca bir mesajı işlemesine izin verir. Bu, mesajların sırayla işlenmesini sağlar ve her mesajın başarıyla işlendiğinden emin olunmasını sağlar.
+                                                                      //global:false, bu ayarın yalnızca bu tüketici için geçerli olduğunu belirtir. Eğer true olsaydı, bu ayar tüm tüketiciler için geçerli olurdu.
+
 
 //Mesajları okuma işlemi, mesaj geldiğinde tetiklenecek bir olay işleyicisi (event handler) aracılığıyla gerçekleştirilir. Bu işleyici, mesajın içeriğini alır ve istediğiniz şekilde işleyebilir. Örneğin, mesajı konsola yazdırabilirsiniz.
 consumer.ReceivedAsync += async (sender, eventArgs) =>

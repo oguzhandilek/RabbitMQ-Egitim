@@ -1,5 +1,4 @@
-﻿
-#region RabbitMQ.Client Kütüphanesi
+﻿#region RabbitMQ.Client Kütüphanesi
 //.NET teknolojileri ile RabbitMQ'yu kullanabilmek için RabbitMQ.Client kütüphanesini projenize yüklemeniz gerekmektedir.
 #endregion
 #region Publisher Uygulaması İşlem Sırası
@@ -44,6 +43,8 @@ await channel.QueueDeclareAsync("example-queue", durable: true, exclusive: false
 //Queue'ya Mesaj Gönderme
 //Queue'ya mesaj göndermek için mesajın byte[] formatında olması gerekmektedir. Bu nedenle mesajı UTF-8 formatında byte dizisine dönüştürmek için Encoding.UTF8.GetBytes() metodunu kullanabilirsiniz.
 
+var properties = new BasicProperties { Persistent = true }; // Mesajın kalıcı olmasını sağlar. RabbitMQ yeniden başlatıldığında mesaj kaybolmaz.
+
 //byte[] message= Encoding.UTF8.GetBytes("Hello, RabbitMQ!"); // Gönderilecek mesajı byte[] formatına dönüştürür.
 //await channel.BasicPublishAsync(exchange:"", routingKey:"example-queue", body:message); // Mesajı kuyruğa gönderir.
 
@@ -51,7 +52,7 @@ for (int i = 0; i < 1000; i++)
 {
    await Task.Delay(1000);
     byte[] message = Encoding.UTF8.GetBytes($"Hello, RabbitMQ {i}");
-    await channel.BasicPublishAsync(exchange: "", routingKey: "example-queue", body: message);
+    await channel.BasicPublishAsync(exchange: "", routingKey: "example-queue", mandatory: false, basicProperties: properties, body: message);
 }
 
 Console.ReadLine();

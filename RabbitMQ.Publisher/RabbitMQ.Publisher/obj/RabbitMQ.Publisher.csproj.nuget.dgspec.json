@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\personal-repostories\\RabbitMQ-Egitim-Serisi\\RabbitMQ.Publisher\\RabbitMQ.Publisher\\RabbitMQ.Publisher.csproj": {}
+    "D:\\RabbitMQ-Egitim\\RabbitMQ.Publisher\\RabbitMQ.Publisher\\RabbitMQ.Publisher.csproj": {}
   },
   "projects": {
-    "D:\\personal-repostories\\RabbitMQ-Egitim-Serisi\\RabbitMQ.Publisher\\RabbitMQ.Publisher\\RabbitMQ.Publisher.csproj": {
+    "D:\\RabbitMQ-Egitim\\RabbitMQ.Publisher\\RabbitMQ.Publisher\\RabbitMQ.Publisher.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\personal-repostories\\RabbitMQ-Egitim-Serisi\\RabbitMQ.Publisher\\RabbitMQ.Publisher\\RabbitMQ.Publisher.csproj",
+        "projectUniqueName": "D:\\RabbitMQ-Egitim\\RabbitMQ.Publisher\\RabbitMQ.Publisher\\RabbitMQ.Publisher.csproj",
         "projectName": "RabbitMQ.Publisher",
-        "projectPath": "D:\\personal-repostories\\RabbitMQ-Egitim-Serisi\\RabbitMQ.Publisher\\RabbitMQ.Publisher\\RabbitMQ.Publisher.csproj",
-        "packagesPath": "C:\\Users\\3249703\\.nuget\\packages\\",
-        "outputPath": "D:\\personal-repostories\\RabbitMQ-Egitim-Serisi\\RabbitMQ.Publisher\\RabbitMQ.Publisher\\obj\\",
+        "projectPath": "D:\\RabbitMQ-Egitim\\RabbitMQ.Publisher\\RabbitMQ.Publisher\\RabbitMQ.Publisher.csproj",
+        "packagesPath": "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\",
+        "outputPath": "D:\\RabbitMQ-Egitim\\RabbitMQ.Publisher\\RabbitMQ.Publisher\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\DevApplications\\Microsoft Visual Studio\\2022\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\3249703\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OĞUZHAN DİLEK\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -72,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.311/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
