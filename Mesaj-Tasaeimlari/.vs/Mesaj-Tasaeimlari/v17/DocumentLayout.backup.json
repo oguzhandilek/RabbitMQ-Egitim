@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\RabbitMQ-Egitim\\Mesaj-Tasaeimlari\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1664F1-B1EB-4781-BAA1-91EBDEBC03F3}|Publisher\\Publisher.csproj|d:\\rabbitmq-egitim\\mesaj-tasaeimlari\\publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1664F1-B1EB-4781-BAA1-91EBDEBC03F3}|Publisher\\Publisher.csproj|solutionrelative:publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65448BFF-39B2-42F4-A289-3EC7D16DDA8B}|Consumer\\Consumer.csproj|d:\\rabbitmq-egitim\\mesaj-tasaeimlari\\consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65448BFF-39B2-42F4-A289-3EC7D16DDA8B}|Consumer\\Consumer.csproj|solutionrelative:consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\Mesaj-Tasaeimlari\\Consumer\\Program.cs",
+              "RelativeDocumentMoniker": "Consumer\\Program.cs",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\Mesaj-Tasaeimlari\\Consumer\\Program.cs",
+              "RelativeToolTip": "Consumer\\Program.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAmwHMAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T18:58:17.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\Mesaj-Tasaeimlari\\Publisher\\Program.cs",
+              "RelativeDocumentMoniker": "Publisher\\Program.cs",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\Mesaj-Tasaeimlari\\Publisher\\Program.cs",
+              "RelativeToolTip": "Publisher\\Program.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAmwFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T18:55:36.946Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

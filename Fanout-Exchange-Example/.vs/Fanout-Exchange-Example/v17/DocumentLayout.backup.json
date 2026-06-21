@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\RabbitMQ-Egitim\\Fanout-Exchange-Example\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D135F59C-D1BB-4079-86E0-CAA028A8166E}|Consumer\\Consumer.csproj|d:\\rabbitmq-egitim\\fanout-exchange-example\\consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D135F59C-D1BB-4079-86E0-CAA028A8166E}|Consumer\\Consumer.csproj|solutionrelative:consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7EE15C1-34BD-4D50-9F61-CF1528080E00}|Publisher\\Publisher.csproj|d:\\rabbitmq-egitim\\fanout-exchange-example\\publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7EE15C1-34BD-4D50-9F61-CF1528080E00}|Publisher\\Publisher.csproj|solutionrelative:publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\Fanout-Exchange-Example\\Consumer\\Program.cs",
+              "RelativeDocumentMoniker": "Consumer\\Program.cs",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\Fanout-Exchange-Example\\Consumer\\Program.cs",
+              "RelativeToolTip": "Consumer\\Program.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T18:52:42.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\Fanout-Exchange-Example\\Publisher\\Program.cs",
+              "RelativeDocumentMoniker": "Publisher\\Program.cs",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\Fanout-Exchange-Example\\Publisher\\Program.cs",
+              "RelativeToolTip": "Publisher\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T18:43:30.401Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

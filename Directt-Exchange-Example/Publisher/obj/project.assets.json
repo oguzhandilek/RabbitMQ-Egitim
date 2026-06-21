@@ -142,11 +142,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\RabbitMQDersleri\\Directt-Exchange-Example\\Publisher\\Publisher.csproj",
+      "projectUniqueName": "D:\\RabbitMQ-Egitim\\Directt-Exchange-Example\\Publisher\\Publisher.csproj",
       "projectName": "Publisher",
-      "projectPath": "D:\\RabbitMQDersleri\\Directt-Exchange-Example\\Publisher\\Publisher.csproj",
+      "projectPath": "D:\\RabbitMQ-Egitim\\Directt-Exchange-Example\\Publisher\\Publisher.csproj",
       "packagesPath": "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\",
-      "outputPath": "D:\\RabbitMQDersleri\\Directt-Exchange-Example\\Publisher\\obj\\",
+      "outputPath": "D:\\RabbitMQ-Egitim\\Directt-Exchange-Example\\Publisher\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

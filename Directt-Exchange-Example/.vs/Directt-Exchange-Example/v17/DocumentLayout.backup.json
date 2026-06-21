@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\RabbitMQDersleri\\Directt-Exchange-Example\\",
+  "WorkspaceRootPath": "D:\\RabbitMQ-Egitim\\Directt-Exchange-Example\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{584A5868-0D8D-4E84-9876-E174C60512AA}|Consumer\\Consumer.csproj|d:\\rabbitmqdersleri\\directt-exchange-example\\consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{584A5868-0D8D-4E84-9876-E174C60512AA}|Consumer\\Consumer.csproj|d:\\rabbitmq-egitim\\directt-exchange-example\\consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{584A5868-0D8D-4E84-9876-E174C60512AA}|Consumer\\Consumer.csproj|solutionrelative:consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D16084B0-7889-41F4-AFCE-4C2FBDAD6740}|Publisher\\Publisher.csproj|d:\\rabbitmqdersleri\\directt-exchange-example\\publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D16084B0-7889-41F4-AFCE-4C2FBDAD6740}|Publisher\\Publisher.csproj|d:\\rabbitmq-egitim\\directt-exchange-example\\publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D16084B0-7889-41F4-AFCE-4C2FBDAD6740}|Publisher\\Publisher.csproj|solutionrelative:publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,24 +24,23 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\RabbitMQDersleri\\Directt-Exchange-Example\\Publisher\\Program.cs",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\Directt-Exchange-Example\\Publisher\\Program.cs",
               "RelativeDocumentMoniker": "Publisher\\Program.cs",
-              "ToolTip": "D:\\RabbitMQDersleri\\Directt-Exchange-Example\\Publisher\\Program.cs",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\Directt-Exchange-Example\\Publisher\\Program.cs",
               "RelativeToolTip": "Publisher\\Program.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAFAQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T20:42:24.24Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-18T20:42:24.24Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\RabbitMQDersleri\\Directt-Exchange-Example\\Consumer\\Program.cs",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\Directt-Exchange-Example\\Consumer\\Program.cs",
               "RelativeDocumentMoniker": "Consumer\\Program.cs",
-              "ToolTip": "D:\\RabbitMQDersleri\\Directt-Exchange-Example\\Consumer\\Program.cs",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\Directt-Exchange-Example\\Consumer\\Program.cs",
               "RelativeToolTip": "Consumer\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAABYAAADHAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABYAAADHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-18T20:42:22.164Z",
               "EditorCaption": ""
