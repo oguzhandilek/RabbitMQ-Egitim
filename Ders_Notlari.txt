@@ -324,4 +324,218 @@ RabbitMQ, default olarak tüm consumer'lara sırasıyla mesaj gönderir.
 ///////////************** Direct Exchange*************\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	Mesajların direkt olarak belirli bir kuyruğa gönderilmesini sağlayan exchange'dir.
+
+///////************Fanout Exchange********\\\\\\\\\\
+
+	Mesajların, bu exchange'e bind olmuş olan tüm kuyruklara gönderilmesini sağlar. Publisher mesajların gönderildiği kuyruk isimlerini dikkate almaz ve mesajları tüm kuyruklara gönderir.
 	
+///////******************Topic Exchange ********\\\\\\\\\\\\\\\\
+
+	Routing key'leri kullanarak mesajlan kuyruklara yönlendirmek için kullanılan bir exchange'dir. BU exchange ile routing key'in bir kısmına/formatına/yapısına/yapısındakj keylere göre kuyruklara mesaj gönderilir.
+	Kuyruklar da, routing key'e göre bu exchange'e abone olabilir ve sadece ilgili routing key'e göre gönderilen mesajlan alabilirler.
+	
+	RABBITMQ TOPIC EXCHANGE
+
+Topic Exchange'te mesajlar Routing Key üzerinden yönlendirilir.
+Routing Key'ler "." (nokta) ile ayrılmış segmentlerden oluşur.
+
+Örnek Routing Key:
+
+Asker.Subay.Yuzbasi
+
+Segmentler:
+Asker | Subay | Yuzbasi
+
+--------------------------------------------------
+WILDCARD KARAKTERLERİ
+--------------------------------------------------
+
+*  => Tam olarak 1 segmenti temsil eder.
+#  => 0 veya daha fazla segmenti temsil eder.
+
+--------------------------------------------------
+* (ASTERISK) KULLANIMI
+--------------------------------------------------
+
+Binding Key:
+Asker.*.Yuzbasi
+
+Eşleşen Routing Key'ler:
+
+Asker.Subay.Yuzbasi
+Asker.Astsubay.Yuzbasi
+Asker.General.Yuzbasi
+
+Eşleşmeyen Routing Key'ler:
+
+Asker.Yuzbasi
+Asker.Kara.Subay.Yuzbasi
+
+Açıklama:
+* yalnızca tek bir segment yerine geçer.
+
+--------------------------------------------------
+# (HASH) KULLANIMI
+--------------------------------------------------
+
+Binding Key:
+Asker.#
+
+Eşleşen Routing Key'ler:
+
+Asker
+Asker.Subay
+Asker.Subay.Yuzbasi
+Asker.Kara.Kuvvetleri.Subay.Yuzbasi
+
+Açıklama:
+# sıfır veya daha fazla segment yerine geçebilir.
+
+--------------------------------------------------
+ÖRNEKLER
+--------------------------------------------------
+
+Mesaj Routing Key:
+
+Asker.Subay.Yuzbasi
+
+--------------------------------------------------
+Binding Key: Asker.#
+--------------------------------------------------
+
+Asker.Subay.Yuzbasi      ✔
+Asker.Subay             ✔
+Asker                   ✔
+Asker.Kara.Tankci       ✔
+
+Açıklama:
+"Asker" ile başlayan tüm mesajları yakalar.
+
+--------------------------------------------------
+Binding Key: *.Subay.*
+--------------------------------------------------
+
+Asker.Subay.Yuzbasi     ✔
+Polis.Subay.Komiser     ✔
+Denizci.Subay.Tegmen    ✔
+
+Subay.Yuzbasi           ✘
+Asker.Komutan.Yuzbasi   ✘
+Asker.Subay             ✘
+
+Açıklama:
+Toplam 3 segment olmalıdır ve ortadaki segment "Subay" olmalıdır.
+
+--------------------------------------------------
+Binding Key: *.*.Tegmen
+--------------------------------------------------
+
+Asker.Subay.Tegmen      ✔
+Deniz.Subay.Tegmen      ✔
+Polis.Amir.Tegmen       ✔
+
+Asker.Tegmen            ✘
+Asker.Subay.Ustegmen    ✘
+Asker.Kara.Subay.Tegmen ✘
+
+Açıklama:
+İlk iki segment herhangi bir değer olabilir,
+son segment mutlaka "Tegmen" olmalıdır.
+
+--------------------------------------------------
+KARŞILAŞTIRMA TABLOSU
+--------------------------------------------------
+
+Routing Key:
+Asker.Subay.Yuzbasi
+
+Binding Key                 Sonuç
+
+Asker.Subay.Yuzbasi         ✔
+Asker.*.Yuzbasi             ✔
+*.Subay.Yuzbasi             ✔
+*.Subay.*                   ✔
+Asker.#                     ✔
+#                           ✔
+*.*.*                       ✔
+Asker.*                     ✘
+Asker.*.*.*                 ✘
+#.Yuzbasi                   ✔
+*.#.Yuzbasi                 ✔
+
+--------------------------------------------------
+AKILDA KALICI ÖZET
+--------------------------------------------------
+
+*  = Tam olarak 1 segment
+
+#  = 0 veya daha fazla segment
+
+Örnek:
+
+Routing Key:
+Asker.Subay.Yuzbasi
+
+Asker.*.Yuzbasi  => ✔
+Asker.#          => ✔
+*.Subay.*        => ✔
+*.*.Yuzbasi      => ✔
+Asker.*          => ✘
+
+--------------------------------------------------
+EN ÇOK KULLANILAN BINDING KEY ÖRNEKLERİ
+--------------------------------------------------
+
+#                   => Tüm mesajları alır
+
+Asker.#             => Asker ile başlayan tüm mesajları alır
+
+*.Subay.*           => Ortasında Subay geçen 3 segmentli mesajları alır
+
+*.*.Yuzbasi         => Sonu Yuzbasi olan 3 segmentli mesajları alır
+
+#.Yuzbasi           => Sonu Yuzbasi ile biten tüm mesajları alır
+
+Asker.*             => Asker.X formatındaki 2 segmentli mesajları alır
+
+Asker.*.*           => Asker.X.Y formatındaki 3 segmentli mesajları alır
+
+
+//////////******** Headers Exchange ********\\\\\\
+
+Routing key yerine headedları kullanarak mesajlan kuyruklara yönlendirmek için kullanılan exchange'dir.
+
+x-match : ilgili queue'nun mesaji hangi davranisla alacaginin kararini veren bir key'dir.
+
+any: İlgli queue nin sadece tek bir key value değerinin eşleşmesinin neticesinde mesajı lacağını ifade eder.
+all: İlgili queue'nun tüm key-value değerlerindeki verilerın eşleşmesi neticesinde mesajı alacğaını ifade eder.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+////////////***********RABBİTMQ MESAJ TASARIMLARI**********\\\\\\\\
+
+		/////****Mesaj Tasarımlarından Kastedilen Nedir? ********\\\\\\\\\\
+		
+		Mesaj tasarımlarından kastedilen, tıpkı design pattern'lar da olduğu gibi belli başlı senaryolara karşı gösterilebilecek önceden tanımlanmış, tarif edilmiş ve pratiksel olarak adımları saptanmış davranışlardır.
+		Belirli bir problemi çözmek için kullanılan bu tasarımlar, genel anlamda yapısal davranışı ve iletişim modelini ifade etmektedir.
+		Yani, iki servis arasında message broker ile yapılacak haberleşme sürecinde iletilecek mesajların nasıl iletileceğini, nasıl işleneceğini, ne şekilde yapılandırılacağını ve ne tür bilgiler taşıyacağını belirler.
+		Her tasarım farklı bir uygulama senaryosuna ve gereksinimine göre şekillenmekte ve en iyi sonuçlar alınabilecek şekilde yapılandırılmaktadır.
+		
+	////////*********Yaygın Mesaj Tasarımları N5ferÖırğ******\\\\\\\\\\\\
+
+		////*****P2P(Point-to-Point) Tasarımı****\\\\\
+			BU tasarımda, bir publisher ilgili mesajı direkt bir kuyruğa gönderir ve bu mesaj kuyruğu işleyen bir consumer tarafından tüketilir. Eğer ki senaryo gereği bir mesajın bir tüketici tarafından işlenmesi gerekiyorsa bu yaklaşım kullanılır.
+			P2P tasarımda gerektiren senaryolarda genellikle direcl exchonge kullanılmaktadır diyebiliriz.
+		
+		/////****** Publish/Subscribe (PUb/SUb) Tasarımı\\\\\\\
+			BU tasarımda publisher mesajı bir exchange'e gönderir ve böylece mesaj bu exchange'e bind edilmiş olan tüm kuyruklara yönlendirilir. BU tasarım, bir mesajın birçok tüketici tarafından işlenmesi gerektiği durumlarda kullanışlıdır.
+			Publish/Subscribe tasanmı gerektiren senaryolarda genellikle fanout exchange kullanılmakladır diyebiliriz.
+		
+		/////******Work Queue(İş Kuyruğu) Tasarımı*****\\\\
+		
+		BU tasarımda, publisher tarafından yayınlanmış bir mesajın birden fazla consumer arasından yalnızca biri tarafından tüketilmesi amaçlanmaktadır. Böylece mesajların işlenmesin sürecinde tüm consumer'lar aynı iş yüküne ve eşit görev daöılımına sahio olacaktırlar
+		Work Queue tasarımı, iş yükünün dağıtılması gereken ve paralel işleme ihtiyacı duyulan senaryolar için oldukça uygundur.
+		Work Queue tasanm gerektiren senaryolarda genellikle direct exchange kullanılmaktadır diyebiliriz.
+		
+		/////***** Request/Response Tasarımı***\\\\\
+			Bu tasarımda, publisher bir request yapar gibi kuyruğa mesaj gönderir ve bu mesajı tüketen consumer' dan sonuca dair başka kuyruktan bir yanıt/response bekler. BU tarz senaryolar için oldukça uygun bir tasarımdır.
