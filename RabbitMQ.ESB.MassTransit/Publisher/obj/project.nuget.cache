@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "dgSpecHash": "kMgStlvt2hk=",
+  "success": true,
+  "projectFilePath": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Publisher\\Publisher.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\masstransit\\9.1.2\\masstransit.9.1.2.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\masstransit.abstractions\\9.1.2\\masstransit.abstractions.9.1.2.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\masstransit.rabbitmq\\9.1.2\\masstransit.rabbitmq.9.1.2.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\8.0.0\\microsoft.extensions.diagnostics.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks\\8.0.0\\microsoft.extensions.diagnostics.healthchecks.8.0.0.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks.abstractions\\8.0.0\\microsoft.extensions.diagnostics.healthchecks.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0\\microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\8.0.0\\microsoft.extensions.hosting.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\rabbitmq.client\\7.2.1\\rabbitmq.client.7.2.1.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
+    "C:\\Users\\OĞUZHAN DİLEK\\.nuget\\packages\\system.threading.ratelimiting\\8.0.0\\system.threading.ratelimiting.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

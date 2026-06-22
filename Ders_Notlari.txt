@@ -539,3 +539,57 @@ all: İlgili queue'nun tüm key-value değerlerindeki verilerın eşleşmesi net
 		
 		/////***** Request/Response Tasarımı***\\\\\
 			Bu tasarımda, publisher bir request yapar gibi kuyruğa mesaj gönderir ve bu mesajı tüketen consumer' dan sonuca dair başka kuyruktan bir yanıt/response bekler. BU tarz senaryolar için oldukça uygun bir tasarımdır.
+			
+			
+			
+			
+	-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	////////////////***********EBS (ENTERPRISE SERVICE BUS) NEDİR***********\\\\\\\\\\\\\\\\\\\\\\\\
+	
+		ESB, servisler arası entegrasyon sağlayan komponentlerin bütünüdür diyebiliriz.Yani, farklı yazılım sistemlerinin birbirleriyle iletişim kurmasını sağlamak için kullanılan bir yazılım mimarisi ve araç setidir.
+		Burada şöyle bir örnek üzerinden devam edebiliriz. RabbitMQ farklı sistemler arasında bir iletişim modeli ortaya koymamızı sağlayan teknolojidir, doğru mu?
+		Heh işte ESB, RabbitMQ gibi farklı sistemlerin birbirleriyle etkileşime girmesini sağlayan teknolojilerin kullanımını ve yönetilebilirliğini kolaylaştırmakta ve buna bir ortam sağlamaktadır.
+		
+		//////***ESBnin Temel Amacı Nedir?****\\\\\\\
+			ESB'nin temel amacı, farklı yazılım uygulamalannın/servislerinin/sistemlerinin birbirleriyle kolayca iletişim kurabilmesini sağlamaktır.
+			
+	///////////********MassTransit Nedir?*******\\\\\\\\\\\
+	
+		.NET İçin geliştirilmiş olan, distributed uygulamaları rahatlıkla yönetmeyi ve çalıştırmayı amaçlayan, ücretsiz open source bir Enterprise Service BUS frameworklüdür. 
+		Messaging tabanlı, gevşek bağlı(loosely coupled) ve asenkron olarak tasarlanmış dağınık sistemlerde yüksek dereceli kullanılabilirlik, güvenilirlik ve ölçeklenebilirlik sağlayabilmek için servisler oluşturmayı oldukça kolaylaştırmaktadır.
+		Özellikleri 
+			Kullanımı kolaydır.
+			Güçlü mesaj desenlerini(message pattern) destekler.
+			Distributed transaction sağlar.
+			Test edilebilirdir.
+			Monitoring özelliği mevcuttur.
+			Transport işlemlerinin kopleksliğini düşürür.
+			Mültiple transport desteği sağlar.
+			Hata yönetimi sağlar.
+			Scheduling mevcuttur.
+			Request/Response pattern'larını destekler.
+			Message broker exchange'lerini yönetebilir.
+			
+	MASSTRANSİL FARKLI UYGJLAMALAR ARASINDA COMMUNİCATİON YAPABİLMEMİZİ SAĞLAYAN BİR TRANSPORT GATEWAY'DİR.
+	
+	Transport Gateway, farklı sistemler arasında faklı iletişim protokellerini kullanarak sistemler arasmda iletişim kurmayı sağlayan bir araçtır
+	BU araç; İletişim protokolledndeld farklılıkları gizleyerek sistemlerin biribirleriyle sorumuz bir şekilde çalışailmesini sağlamaktadır.
+	Misal olarak; Windows işletim sistemi ile Linux arasında bir ileitşim süreci söz konusuysa, farklı protokollere dayalı olan bu sistemler arasında ister istemez uyumsuzluk söz konusu olabilir ve bundan dolayı iletişimde sorunlar meydana gelebiir. İşte böyle bir durumda Transport Gateway kullanarak süreç en ideal hale getirilir.
+	
+		MassTransit Hangi Durumlarda Kullanılır?
+			UYGULAMANIN MESSAGE BROKER BAĞIMLILIĞINI ORTADAN KALDIRMAK içiN TERCİH EDİLEBİLİR. MassTransit, özellikle microservice mimarisini gibi distributed sistemlerin oluşturulması ve bu sistemlerin kendi aralarındaki haberleşme sürecinde herhangi bir teknolojiye dair olabilecek bağımlılığı soyutlamak için kullanılan kütüphanedir.
+			
+	//////******Basit Düzeyde MassTransit'in Kullanımı	*********\\\\\\
+	BU uygulamaların yanında ayriyeten Shared isimli Class librarfde dikkatinizi çekmiş olsa gerek. BU katmanda iki servis arasında gerçekleştirilecek iletişimin mesaj formatı belirleniyor olacaktır.
+	
+		Publish ile Send Arasıdaki Fark Nedir?
+		
+		Farkındaysanız MassTransit'i kullanırken servisler arasında mesaj iletimini Publish ve Send olmak üzere iki farklı yolla gerçekleştirmiş bulunuyoruz...
+		
+		Publish: Event tabanlı mesaj iletim yöntemini ifade eder, Özünde publish/subscribe patternlını uygulamaktadır. Event publish edildiğinde, o event'e subscribe olan tüm queue'lara mesaj İletilecektir!
+		MassTransit'te IPublishEndpoint referansıyla kullanılabilmektedir.
+		
+		Send: Command tabanlı mesaj iletim yöntemini ifade eder. Hangi kuyruğa mesaj iletimi gerçekleştirilecekse endpoint olarak bildirilmesi gerekmektedir.
+		MassTransit'te ISendEndpointProvider referansı üzerinden 'GetSendEndpoint' metodu ile mesajın gönderileceği kuyruk ifade edilerek kullanılabilir.
