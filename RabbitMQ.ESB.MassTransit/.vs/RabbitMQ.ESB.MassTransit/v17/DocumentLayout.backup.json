@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66A4A0F4-2A71-47F1-8659-60CC5389DA89}|Publisher\\Publisher.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit\\publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66A4A0F4-2A71-47F1-8659-60CC5389DA89}|Publisher\\Publisher.csproj|solutionrelative:publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE28E7A5-0FE0-4B5A-8404-C44E06649236}|Consumer\\Consumer.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit\\consumer\\consumers\\examplemessageconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE28E7A5-0FE0-4B5A-8404-C44E06649236}|Consumer\\Consumer.csproj|solutionrelative:consumer\\consumers\\examplemessageconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE28E7A5-0FE0-4B5A-8404-C44E06649236}|Consumer\\Consumer.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit\\consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE28E7A5-0FE0-4B5A-8404-C44E06649236}|Consumer\\Consumer.csproj|solutionrelative:consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66A4A0F4-2A71-47F1-8659-60CC5389DA89}|Publisher\\Publisher.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit\\publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66A4A0F4-2A71-47F1-8659-60CC5389DA89}|Publisher\\Publisher.csproj|solutionrelative:publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67CF2B90-95B1-47CD-8C6C-610D95C79552}|Shared\\Shared.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit\\shared\\messages\\examplemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67CF2B90-95B1-47CD-8C6C-610D95C79552}|Shared\\Shared.csproj|solutionrelative:shared\\messages\\examplemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE28E7A5-0FE0-4B5A-8404-C44E06649236}|Consumer\\Consumer.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit\\consumer\\consumers\\examplemessageconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE28E7A5-0FE0-4B5A-8404-C44E06649236}|Consumer\\Consumer.csproj|solutionrelative:consumer\\consumers\\examplemessageconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE28E7A5-0FE0-4B5A-8404-C44E06649236}|Consumer\\Consumer.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit\\consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE28E7A5-0FE0-4B5A-8404-C44E06649236}|Consumer\\Consumer.csproj|solutionrelative:consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67CF2B90-95B1-47CD-8C6C-610D95C79552}|Shared\\Shared.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit\\shared\\messages\\imessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,17 +34,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ExampleMessageConsumer.cs",
               "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Consumer\\Consumers\\ExampleMessageConsumer.cs",
               "RelativeDocumentMoniker": "Consumer\\Consumers\\ExampleMessageConsumer.cs",
               "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Consumer\\Consumers\\ExampleMessageConsumer.cs",
               "RelativeToolTip": "Consumer\\Consumers\\ExampleMessageConsumer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAYwA4AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-22T19:27:18.95Z",
               "EditorCaption": ""
@@ -90,12 +90,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Consumer\\Program.cs",
               "RelativeDocumentMoniker": "Consumer\\Program.cs",
-              "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Consumer\\Program.cs*",
-              "RelativeToolTip": "Consumer\\Program.cs*",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Consumer\\Program.cs",
+              "RelativeToolTip": "Consumer\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-22T19:11:24.018Z",
@@ -103,13 +103,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Publisher\\Program.cs",
               "RelativeDocumentMoniker": "Publisher\\Program.cs",
-              "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Publisher\\Program.cs*",
-              "RelativeToolTip": "Publisher\\Program.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Publisher\\Program.cs",
+              "RelativeToolTip": "Publisher\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAswBUAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-22T19:10:49.95Z",
               "EditorCaption": ""

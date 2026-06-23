@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F9DF9A4-42C1-414B-8B93-BBB4A41B6921}|Consumer\\Consumer.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit.request.response.pattern\\consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F9DF9A4-42C1-414B-8B93-BBB4A41B6921}|Consumer\\Consumer.csproj|solutionrelative:consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B09B77B2-7551-41C8-B391-9C27DE19E77E}|Publisher\\Publisher.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit.request.response.pattern\\publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B09B77B2-7551-41C8-B391-9C27DE19E77E}|Publisher\\Publisher.csproj|solutionrelative:publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F9DF9A4-42C1-414B-8B93-BBB4A41B6921}|Consumer\\Consumer.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit.request.response.pattern\\consumer\\consumers\\requestmessageconsuemr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F9DF9A4-42C1-414B-8B93-BBB4A41B6921}|Consumer\\Consumer.csproj|solutionrelative:consumer\\consumers\\requestmessageconsuemr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B09B77B2-7551-41C8-B391-9C27DE19E77E}|Publisher\\Publisher.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit.request.response.pattern\\publisher\\publisher.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B09B77B2-7551-41C8-B391-9C27DE19E77E}|Publisher\\Publisher.csproj|solutionrelative:publisher\\publisher.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F9DF9A4-42C1-414B-8B93-BBB4A41B6921}|Consumer\\Consumer.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit.request.response.pattern\\consumer\\consumer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0F9DF9A4-42C1-414B-8B93-BBB4A41B6921}|Consumer\\Consumer.csproj|solutionrelative:consumer\\consumer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1452B436-C13E-4973-9999-475A066CEEFD}|Shared\\Shared.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit.request.response.pattern\\shared\\messages\\imessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1452B436-C13E-4973-9999-475A066CEEFD}|Shared\\Shared.csproj|solutionrelative:shared\\messages\\imessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1452B436-C13E-4973-9999-475A066CEEFD}|Shared\\Shared.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit.request.response.pattern\\shared\\requestresponsemessage\\requestmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1452B436-C13E-4973-9999-475A066CEEFD}|Shared\\Shared.csproj|solutionrelative:shared\\requestresponsemessage\\requestmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1452B436-C13E-4973-9999-475A066CEEFD}|Shared\\Shared.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit.request.response.pattern\\shared\\requestresponsemessage\\responsemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1452B436-C13E-4973-9999-475A066CEEFD}|Shared\\Shared.csproj|solutionrelative:shared\\requestresponsemessage\\responsemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RequestMessageConsuemr.cs",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Consumer\\Consumers\\RequestMessageConsuemr.cs",
+              "RelativeDocumentMoniker": "Consumer\\Consumers\\RequestMessageConsuemr.cs",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Consumer\\Consumers\\RequestMessageConsuemr.cs",
+              "RelativeToolTip": "Consumer\\Consumers\\RequestMessageConsuemr.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:57:29.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Consumer",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Consumer\\Consumer.csproj",
+              "RelativeDocumentMoniker": "Consumer\\Consumer.csproj",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Consumer\\Consumer.csproj",
+              "RelativeToolTip": "Consumer\\Consumer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-23T18:46:25.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Publisher",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Publisher\\Publisher.csproj",
+              "RelativeDocumentMoniker": "Publisher\\Publisher.csproj",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Publisher\\Publisher.csproj",
+              "RelativeToolTip": "Publisher\\Publisher.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-23T18:45:46.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IMessage.cs",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Shared\\Messages\\IMessage.cs",
+              "RelativeDocumentMoniker": "Shared\\Messages\\IMessage.cs",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Shared\\Messages\\IMessage.cs",
+              "RelativeToolTip": "Shared\\Messages\\IMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:44:47.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ResponseMessage.cs",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Shared\\RequestResponseMessage\\ResponseMessage.cs",
+              "RelativeDocumentMoniker": "Shared\\RequestResponseMessage\\ResponseMessage.cs",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Shared\\RequestResponseMessage\\ResponseMessage.cs",
+              "RelativeToolTip": "Shared\\RequestResponseMessage\\ResponseMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:43:34.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RequestMessage.cs",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Shared\\RequestResponseMessage\\RequestMessage.cs",
+              "RelativeDocumentMoniker": "Shared\\RequestResponseMessage\\RequestMessage.cs",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Shared\\RequestResponseMessage\\RequestMessage.cs",
+              "RelativeToolTip": "Shared\\RequestResponseMessage\\RequestMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:43:25.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Publisher\\Program.cs",
+              "RelativeDocumentMoniker": "Publisher\\Program.cs",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Publisher\\Program.cs",
+              "RelativeToolTip": "Publisher\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:41:16.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Consumer\\Program.cs",
+              "RelativeDocumentMoniker": "Consumer\\Program.cs",
+              "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransiT.Request.Response.Pattern\\Consumer\\Program.cs",
+              "RelativeToolTip": "Consumer\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:41:03.325Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

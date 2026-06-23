@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AE28E7A5-0FE0-4B5A-8404-C44E06649236}|Consumer\\Consumer.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit\\consumer\\consumers\\examplemessageconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE28E7A5-0FE0-4B5A-8404-C44E06649236}|Consumer\\Consumer.csproj|solutionrelative:consumer\\consumers\\examplemessageconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{66A4A0F4-2A71-47F1-8659-60CC5389DA89}|Publisher\\Publisher.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit\\publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66A4A0F4-2A71-47F1-8659-60CC5389DA89}|Publisher\\Publisher.csproj|solutionrelative:publisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE28E7A5-0FE0-4B5A-8404-C44E06649236}|Consumer\\Consumer.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit\\consumer\\consumers\\examplemessageconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE28E7A5-0FE0-4B5A-8404-C44E06649236}|Consumer\\Consumer.csproj|solutionrelative:consumer\\consumers\\examplemessageconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67CF2B90-95B1-47CD-8C6C-610D95C79552}|Shared\\Shared.csproj|d:\\rabbitmq-egitim\\rabbitmq.esb.masstransit\\shared\\messages\\examplemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ExampleMessageConsumer.cs",
               "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Consumer\\Consumers\\ExampleMessageConsumer.cs",
               "RelativeDocumentMoniker": "Consumer\\Consumers\\ExampleMessageConsumer.cs",
@@ -59,8 +59,7 @@
               "RelativeToolTip": "Shared\\Messages\\ExampleMessage.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-22T19:13:21.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-22T19:13:21.302Z"
             },
             {
               "$type": "Document",
@@ -72,21 +71,19 @@
               "RelativeToolTip": "Shared\\Messages\\IMessage.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-22T19:12:27.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-22T19:12:27.991Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Shared",
+              "Title": "Shared.csproj",
               "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Shared\\Shared.csproj",
               "RelativeDocumentMoniker": "Shared\\Shared.csproj",
               "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Shared\\Shared.csproj",
               "RelativeToolTip": "Shared\\Shared.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-06-22T19:12:02.582Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-22T19:12:02.582Z"
             },
             {
               "$type": "Document",
@@ -98,18 +95,17 @@
               "RelativeToolTip": "Consumer\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-22T19:11:24.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-22T19:11:24.018Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Publisher\\Program.cs",
               "RelativeDocumentMoniker": "Publisher\\Program.cs",
               "ToolTip": "D:\\RabbitMQ-Egitim\\RabbitMQ.ESB.MassTransit\\Publisher\\Program.cs",
               "RelativeToolTip": "Publisher\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAswBUAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-22T19:10:49.95Z",
               "EditorCaption": ""
